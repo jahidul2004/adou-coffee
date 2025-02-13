@@ -14,11 +14,11 @@ const routes = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch("../../public/categories.json"),
+                loader: () => fetch("/categories.json"),
                 children: [
                     {
                         path: "/category/:category",
-                        loader: () => fetch("../../public/coffees.json"),
+                        loader: () => fetch("/coffees.json"),
                         element: <CoffeeCards></CoffeeCards>,
                     },
                 ],
@@ -30,12 +30,12 @@ const routes = createBrowserRouter([
             {
                 path: "/coffees",
                 element: <Coffees></Coffees>,
-                loader: () => fetch('../../public/coffees.json'),
+                loader: () => fetch("/coffees.json"),
             },
             {
                 path: "/coffees/:id",
                 element: <CoffeeDetails></CoffeeDetails>,
-                loader: () => fetch('../../public/coffees.json'),
+                loader: () => fetch("/coffees.json"),
             },
         ],
     },
